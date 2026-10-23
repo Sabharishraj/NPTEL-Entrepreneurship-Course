@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Progress — NPTEL MCQ Quizzy</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #ff6b9d;
+    --pink-soft: #ffd6e4;
+    --pink-light: #fff0f5;
+    --purple: #8b5cf6;
+    --purple-soft: #e9e1ff;
+    --green: #22c07a;
+    --green-light: #dcfcec;
+    --red: #f0446a;
+    --red-light: #ffe3ea;
+    --ink: #3d2c4f;
+    --white: #ffffff;
+    --radius: 26px;
+    --shadow: 0 10px 30px rgba(255, 107, 157, 0.18);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    color: var(--ink);
+    background: linear-gradient(180deg, #fff5f9 0%, #ffffff 45%, #f6f1ff 100%);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, .logo, .btn, .stat-num { font-family: 'Baloo 2', cursive; }
+
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 6vw;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(255, 107, 157, 0.10);
+  }
+  .logo {
+    font-size: 1.5rem; font-weight: 800; color: var(--pink);
+    display: flex; align-items: center; gap: 8px; text-decoration: none;
+  }
+  .logo-bubble {
+    width: 38px; height: 38px; border-radius: 14px;
+    background: linear-gradient(135deg, var(--pink), var(--purple));
+    display: inline-flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 1.1rem; box-shadow: var(--shadow);
+    transform: rotate(-6deg);
+  }
+  nav ul { display: flex; gap: 28px; list-style: none; }
+  nav ul a {
+    text-decoration: none; color: var(--ink); font-weight: 700; font-size: 1rem;
+    padding: 8px 14px; border-radius: 999px; transition: all .2s ease;
+  }
+  nav ul a:hover { background: var(--pink-light); color: var(--pink); }
+  nav ul a.active { background: var(--pink); color: #fff; box-shadow: var(--shadow); }
+
+  main { max-width: 820px; margin: 0 auto; padding: 46px 5vw 80px; }
+
+  .page-title { text-align: center; font-size: 2.3rem; font-weight: 800; margin-bottom: 8px; }
+  .page-sub { text-align: center; color: #8a7a9b; font-weight: 600; margin-bottom: 34px; }
+
+  .stats { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 34px; }
+  .stat {
+    background: var(--white); border-radius: 22px; box-shadow: var(--shadow);
+    padding: 20px 38px; text-align: center; min-width: 150px;
+  }
+  .stat-num { font-size: 2rem; font-weight: 800; color: var(--pink); }
+  .stat:nth-child(2) .stat-num { color: var(--purple); }
+  .stat:nth-child(3) .stat-num { color: var(--green); }
+  .stat-label { font-weight: 700; color: #8a7a9b; margin-top: 2px; font-size: .9rem; }
+
+  .panel {
+    background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow);
+    padding: 30px; overflow-x: auto;
+  }
+
+  table { width: 100%; border-collapse: collapse; }
+  th, td { padding: 13px 14px; text-align: left; }
+  th {
+    font-family: 'Baloo 2', cursive; color: var(--purple);
+    border-bottom: 3px solid var(--purple-soft); font-size: 1.02rem;
+  }
+  td { font-weight: 700; border-bottom: 2px solid #faf5ff; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: var(--pink-light); }
+
+  .badge {
+    display: inline-block; padding: 4px 14px; border-radius: 999px;
+    font-weight: 800; font-size: .88rem;
+  }
+  .badge-good { background: var(--green-light); color: var(--green); }
+  .badge-mid  { background: #fff4d6; color: #b98a00; }
+  .badge-low  { background: var(--red-light); color: var(--red); }
+
+  .center-msg { text-align: center; padding: 40px 20px; font-weight: 700; color: #8a7a9b; }
+  .spinner {
+    width: 46px; height: 46px; margin: 0 auto 18px; border-radius: 50%;
+    border: 5px solid var(--pink-soft); border-top-color: var(--pink);
+    animation: spin 0.9s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .btn {
+    display: inline-block; text-decoration: none; font-weight: 700; font-size: 1.05rem;
+    padding: 14px 34px; border-radius: 999px; border: none; cursor: pointer;
+    transition: transform .18s ease;
+  }
+  .btn:hover { transform: translateY(-3px) scale(1.03); }
+  .btn-pink { background: linear-gradient(135deg, var(--pink), #ff8fb8); color: #fff; box-shadow: var(--shadow); }
+
+  @media (max-width: 640px) {
+    nav ul { gap: 6px; }
+    nav ul a { padding: 6px 10px; font-size: .9rem; }
+    .panel { padding: 18px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html"><span class="logo-bubble">?</span>Quizzy</a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#weeks">Practice</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="progress.html" class="active">My Progress</a></li>
+  </ul>
+</nav>
+
+<main>
+  <h1 class="page-title">My Progress 📊</h1>
+  <p class="page-sub">Every quiz attempt, saved automatically</p>
+
+  <div id="loading" class="center-msg"><div class="spinner"></div>Loading your history…</div>
+  <div id="error" class="center-msg hidden">Could not load attempts. Is MySQL running and attempts.sql imported?</div>
+
+  <div id="content" class="hidden">
+    <div class="stats">
+      <div class="stat"><div class="stat-num" id="statCount">0</div><div class="stat-label">Quizzes Taken</div></div>
+      <div class="stat"><div class="stat-num" id="statAvg">—</div><div class="stat-label">Average Score</div></div>
+      <div class="stat"><div class="stat-num" id="statBest">—</div><div class="stat-label">Best Score</div></div>
+    </div>
+
+    <div class="panel">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <h3 style="font-size:1.15rem; color:var(--purple);">Attempt History</h3>
+        <button id="clearBtn" style="background:#fee2e2; color:#ef4444; border:none; border-radius:999px; padding:6px 14px; font-weight:700; cursor:pointer; font-size:0.85rem;">Clear History</button>
+      </div>
+      <table>
+        <thead>
+          <tr><th>#</th><th>Week</th><th>Score</th><th>Percent</th><th>Date</th><th>Verdict</th></tr>
+        </thead>
+        <tbody id="attemptRows"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="empty" class="center-msg hidden" style="margin-top:20px;">
+    <p style="margin-bottom:18px;">No attempts yet — go take your first quiz! 🎯</p>
+    <a class="btn btn-pink" href="index.html#weeks">Start Practising</a>
+  </div>
+</main>
+
+<script>
+(function() {
+  const STORAGE_KEY = 'nptel_mcq_attempts_v1';
+
+  function renderAttempts(attempts) {
+    document.getElementById('loading').classList.add('hidden');
+    document.getElementById('error').classList.add('hidden');
+
+    if (!attempts || !attempts.length) {
+      document.getElementById('content').classList.add('hidden');
+      document.getElementById('empty').classList.remove('hidden');
+      return;
+    }
+
+    document.getElementById('empty').classList.add('hidden');
+    document.getElementById('content').classList.remove('hidden');
+
+    const totalPct = attempts.reduce((s, a) => s + (a.score / a.total) * 100, 0);
+    const best = Math.max(...attempts.map(a => (a.score / a.total) * 100));
+    document.getElementById('statCount').textContent = attempts.length;
+    document.getElementById('statAvg').textContent = Math.round(totalPct / attempts.length) + '%';
+    document.getElementById('statBest').textContent = Math.round(best) + '%';
+
+    const tbody = document.getElementById('attemptRows');
+    tbody.innerHTML = '';
+    attempts.forEach((a, i) => {
+      const pct = Math.round((a.score / a.total) * 100);
+      let badgeClass, badgeText;
+      if (pct >= 80)      { badgeClass = 'badge-good'; badgeText = 'Awesome! 🌟'; }
+      else if (pct >= 50) { badgeClass = 'badge-mid';  badgeText = 'Getting there 💪'; }
+      else                { badgeClass = 'badge-low';  badgeText = 'Keep trying 📚'; }
+
+      const tr = document.createElement('tr');
+      tr.innerHTML =
+        `<td>${attempts.length - i}</td>` +
+        `<td>Week ${a.week_number}</td>` +
+        `<td>${a.score} / ${a.total}</td>` +
+        `<td>${pct}%</td>` +
+        `<td>${a.taken_at || 'Recently'}</td>` +
+        `<td><span class="badge ${badgeClass}">${badgeText}</span></td>`;
+      tbody.appendChild(tr);
+    });
+  }
+
+  // Load local attempts immediately
+  let localAttempts = [];
+  try {
+    localAttempts = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  } catch (e) {
+    localAttempts = [];
+  }
+
+  // Try fetching remote/database attempts from api.php if available
+  fetch('api.php?action=attempts')
+    .then(r => r.json())
+    .then(data => {
+      const remoteAttempts = data.attempts || [];
+      // Combine remote and local, prioritizing unique entries
+      const combined = [...localAttempts];
+      remoteAttempts.forEach(ra => {
+        const exists = combined.some(ca => ca.week_number === ra.week_number && ca.score === ra.score && ca.taken_at === ra.taken_at);
+        if (!exists) combined.push(ra);
+      });
+      combined.sort((a, b) => new Date(b.taken_at || 0) - new Date(a.taken_at || 0));
+      renderAttempts(combined);
+    })
+    .catch(() => {
+      // Running on static GitHub Pages or without PHP backend
+      renderAttempts(localAttempts);
+    });
+
+  // Clear history handler
+  document.getElementById('clearBtn')?.addEventListener('click', () => {
+    if (confirm('Are you sure you want to clear your local quiz history?')) {
+      localStorage.removeItem(STORAGE_KEY);
+      renderAttempts([]);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

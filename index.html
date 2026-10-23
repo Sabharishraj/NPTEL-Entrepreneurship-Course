@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NPTEL MCQ Practice — Practise Instantly</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #ff6b9d;
+    --pink-soft: #ffd6e4;
+    --pink-light: #fff0f5;
+    --purple: #8b5cf6;
+    --purple-soft: #e9e1ff;
+    --ink: #3d2c4f;
+    --white: #ffffff;
+    --radius: 26px;
+    --shadow: 0 10px 30px rgba(255, 107, 157, 0.18);
+    --shadow-lg: 0 18px 45px rgba(139, 92, 246, 0.20);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Nunito', sans-serif;
+    color: var(--ink);
+    background: linear-gradient(180deg, #fbd0e1 0%, #ffffff 45%, #f6f1ff 100%);
+    overflow-x: hidden;
+  }
+  h1, h2, h3, .logo, .btn, .stat-num { font-family: 'Baloo 2', cursive; }
+
+  /* ---------- NAV ---------- */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 6vw;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(255, 107, 157, 0.10);
+  }
+  .logo {
+    font-size: 1.5rem; font-weight: 800; color: var(--pink);
+    display: flex; align-items: center; gap: 8px; text-decoration: none;
+  }
+  .logo-bubble {
+    width: 38px; height: 38px; border-radius: 14px;
+    background: linear-gradient(135deg, var(--pink), var(--purple));
+    display: inline-flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 1.1rem; box-shadow: var(--shadow);
+    transform: rotate(-6deg);
+  }
+  nav ul { display: flex; gap: 28px; list-style: none; }
+  nav ul a {
+    text-decoration: none; color: var(--ink); font-weight: 700; font-size: 1rem;
+    padding: 8px 14px; border-radius: 999px; transition: all .2s ease;
+  }
+  nav ul a:hover { background: var(--pink-light); color: var(--pink); }
+  nav ul a.active { background: var(--pink); color: #fff; box-shadow: var(--shadow); }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    position: relative; text-align: center;
+    padding: 90px 6vw 70px;
+  }
+  .blob {
+    position: absolute; border-radius: 50%; filter: blur(70px); opacity: .45; z-index: -1;
+  }
+  .blob-1 { width: 380px; height: 380px; background: var(--pink-soft); top: -80px; left: -100px; }
+  .blob-2 { width: 420px; height: 420px; background: var(--purple-soft); bottom: -140px; right: -120px; }
+
+  .hero-badge {
+    display: inline-block; background: var(--white); color: var(--purple);
+    font-weight: 800; font-size: .85rem; letter-spacing: 1px; text-transform: uppercase;
+    padding: 8px 20px; border-radius: 999px; box-shadow: var(--shadow); margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-size: clamp(2.6rem, 6vw, 4.6rem); font-weight: 800; line-height: 1.08;
+    margin-bottom: 20px;
+  }
+  .hero h1 .highlight {
+    color: var(--pink);
+    position: relative; display: inline-block;
+  }
+  .hero h1 .highlight::after {
+    content: ''; position: absolute; left: 0; right: 0; bottom: 6px; height: 14px;
+    background: var(--purple-soft); z-index: -1; border-radius: 8px; transform: rotate(-1deg);
+  }
+  .hero p.sub {
+    font-size: 1.2rem; max-width: 560px; margin: 0 auto 36px; color: #6b5a7d; font-weight: 600;
+  }
+  .hero-btns { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; text-decoration: none; font-weight: 700; font-size: 1.1rem;
+    padding: 16px 36px; border-radius: 999px; border: none; cursor: pointer;
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .btn:hover { transform: translateY(-3px) scale(1.03); }
+  .btn-pink { background: linear-gradient(135deg, var(--pink), #ff8fb8); color: #fff; box-shadow: var(--shadow-lg); }
+  .btn-outline { background: var(--white); color: var(--purple); box-shadow: 0 8px 24px rgba(139,92,246,.15); border: 3px solid var(--purple-soft); }
+  .btn-outline:hover { border-color: var(--purple); }
+
+  /* ---------- STATS STRIP ---------- */
+  .stats {
+    display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+    padding: 10px 6vw 30px;
+  }
+  .stat {
+    background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow);
+    padding: 26px 44px; text-align: center; min-width: 180px;
+    border: 3px solid transparent; transition: transform .2s ease, border-color .2s ease;
+  }
+  .stat:hover { transform: translateY(-5px) rotate(-1deg); border-color: var(--pink-soft); }
+  .stat-num { font-size: 2.4rem; font-weight: 800; color: var(--pink); }
+  .stat:nth-child(2) .stat-num { color: var(--purple); }
+  .stat-label { font-weight: 700; color: #8a7a9b; margin-top: 4px; }
+
+  /* ---------- SECTIONS ---------- */
+  section { padding: 60px 6vw; }
+  .section-title { text-align: center; margin-bottom: 12px; font-size: 2.2rem; font-weight: 800; }
+  .section-sub { text-align: center; color: #8a7a9b; font-weight: 600; margin-bottom: 44px; }
+
+  /* ---------- QUIZ TYPE CARDS ---------- */
+  .cards {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 26px;
+    max-width: 1100px; margin: 0 auto;
+  }
+  .card {
+    background: var(--white); border-radius: var(--radius); padding: 34px 26px;
+    text-align: center; box-shadow: var(--shadow);
+    border: 3px solid transparent;
+    transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+  }
+  .card:hover { transform: translateY(-8px) rotate(-1deg); border-color: var(--pink-soft); box-shadow: var(--shadow-lg); }
+  .card:nth-child(even):hover { rotate: 1deg; }
+  .card-emoji {
+    width: 74px; height: 74px; margin: 0 auto 18px; border-radius: 24px;
+    display: flex; align-items: center; justify-content: center; font-size: 2rem;
+    background: var(--pink-light); transform: rotate(-4deg);
+  }
+  .card:nth-child(2) .card-emoji { background: var(--purple-soft); transform: rotate(4deg); }
+  .card:nth-child(3) .card-emoji { background: #fff4d6; transform: rotate(-3deg); }
+  .card:nth-child(4) .card-emoji { background: #dcfcec; transform: rotate(3deg); }
+  .card h3 { font-size: 1.25rem; margin-bottom: 10px; }
+  .card p { color: #8a7a9b; font-weight: 600; font-size: .95rem; line-height: 1.5; }
+
+  /* ---------- WEEK CARDS ---------- */
+  .weeks-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 20px;
+    max-width: 1100px; margin: 0 auto;
+  }
+  .week-card {
+    background: var(--white); border-radius: 22px; padding: 26px 18px; text-align: center;
+    text-decoration: none; color: var(--ink); box-shadow: var(--shadow);
+    border: 3px solid transparent;
+    transition: transform .2s ease, border-color .2s ease, background .2s ease;
+  }
+  .week-card:hover { transform: translateY(-6px) scale(1.04); border-color: var(--pink); background: var(--pink-light); }
+  .week-emoji { font-size: 1.8rem; display: block; margin-bottom: 10px; }
+  .week-card strong { font-family: 'Baloo 2', cursive; font-size: 1.15rem; display: block; }
+  .week-card span { font-size: .85rem; color: #8a7a9b; font-weight: 700; }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    text-align: center; padding: 40px 6vw; margin-top: 30px;
+    background: var(--white); border-radius: 40px 40px 0 0; box-shadow: 0 -6px 30px rgba(255,107,157,.10);
+    font-weight: 700; color: #8a7a9b;
+  }
+  footer .logo { justify-content: center; margin-bottom: 10px; }
+
+  @media (max-width: 640px) {
+    nav ul { gap: 6px; }
+    nav ul a { padding: 6px 10px; font-size: .9rem; }
+    .stat { min-width: 140px; padding: 20px 28px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html"><span class="logo-bubble">?</span>Quizzy</a>
+  <ul>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="#weeks">Practice</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="progress.html">My Progress</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <span class="hero-badge">NPTEL Entrepreneurship Course</span>
+  <h1>Practise <span class="highlight">NPTEL MCQs</span> Instantly</h1>
+  <p class="sub">120 multiple-choice questions from Weeks 1–12, with instant feedback and explanations. Pick a week and start smashing the quiz!</p>
+  <div class="hero-btns">
+    <a href="#weeks" class="btn btn-pink">Start Practising</a>
+    <a href="#weeks" class="btn btn-outline">Browse Weeks</a>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="stat-num">12</div><div class="stat-label">Weeks</div></div>
+  <div class="stat"><div class="stat-num">120</div><div class="stat-label">Questions</div></div>
+  <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Instant Feedback</div></div>
+</div>
+
+<section id="quiz-types">
+  <h2 class="section-title">Kind of Quizzes</h2>
+  <p class="section-sub">Everything you need to ace the weekly assignments</p>
+  <div class="cards">
+    <div class="card">
+      <div class="card-emoji">✅</div>
+      <h3>Multiple Choice</h3>
+      <p>Four options per question, exactly like the real NPTEL assignments.</p>
+    </div>
+    <div class="card">
+      <div class="card-emoji">📅</div>
+      <h3>Week-wise Practice</h3>
+      <p>Practise one week at a time with all 10 questions from that week.</p>
+    </div>
+    <div class="card">
+      <div class="card-emoji">🔀</div>
+      <h3>Shuffle Mode</h3>
+      <p>Questions are shuffled every session so you learn, not memorise.</p>
+    </div>
+    <div class="card">
+      <div class="card-emoji">💡</div>
+      <h3>Instant Explanations</h3>
+      <p>Get the why behind every answer the moment you respond.</p>
+    </div>
+  </div>
+</section>
+
+<section id="weeks">
+  <h2 class="section-title">Pick a Week</h2>
+  <p class="section-sub">Each week has 10 questions — click a card to start</p>
+  <div class="weeks-grid" id="weeksGrid"></div>
+</section>
+
+<section id="about">
+  <h2 class="section-title">About This Site</h2>
+  <p class="section-sub">A personal practice tool built from the NPTEL course MCQ bank.<br>
+  Scores are saved automatically after each quiz — check <a href="progress.html" style="color:var(--pink); font-weight:800;">My Progress</a> to see how you're doing.</p>
+</section>
+
+<footer>
+  <a class="logo" href="index.html"><span class="logo-bubble">?</span>Quizzy</a>
+  Made for NPTEL Entrepreneurship practice • Pink-powered learning 🌸 • <a href="https://github.com/Sabharishraj/NPTEL-Entrepreneurship-Course" target="_blank" rel="noopener" style="color:var(--pink); font-weight:700; text-decoration:none;">GitHub</a>
+</footer>
+
+<script>
+  // Build the 12 week cards
+  const emojis = ['🚀','💡','🛠️','📈','⚡','🤖','💰','🌏','🏛️','🏢','🌱','🎯'];
+  const grid = document.getElementById('weeksGrid');
+  for (let w = 1; w <= 12; w++) {
+    const a = document.createElement('a');
+    a.href = `practice.html?week=${w}`;
+    a.className = 'week-card';
+    a.innerHTML = `<span class="week-emoji">${emojis[w-1]}</span><strong>Week ${w}</strong><span>10 questions</span>`;
+    grid.appendChild(a);
+  }
+
+  // Smooth-scroll for in-page nav links
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+
+</body>
+</html>
