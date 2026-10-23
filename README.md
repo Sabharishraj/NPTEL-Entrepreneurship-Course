@@ -1,4 +1,4 @@
-# NPTEL Entrepreneurship Course — Interactive MCQ Quizzy 🚀
+# NPTEL Entrepreneurship Course — Interactive MCQ Quizzy 
 
 An interactive, responsive practice platform built for the **NPTEL Entrepreneurship** course. Master all **12 weeks** and **120 exam-accurate multiple-choice questions** with instant grading, randomized option shuffling, detailed pedagogical explanations, and automated attempt history tracking.
 
@@ -25,7 +25,7 @@ An interactive, responsive practice platform built for the **NPTEL Entrepreneurs
 
 ---
 
-## 📂 Repository Structure
+##  Repository Structure
 
 ```
 .
@@ -44,7 +44,7 @@ An interactive, responsive practice platform built for the **NPTEL Entrepreneurs
 
 ---
 
-## 🚀 Running Locally
+##  Running Locally
 
 ### Option 1: Static / Browser (No Setup Required)
 
@@ -100,6 +100,6 @@ Then visit `http://localhost:8000`.
 
 ---
 
-## 📜 License
+##  License
 
 Created for educational and self-study purposes for students taking the NPTEL Entrepreneurship course.
